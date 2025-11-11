@@ -6,7 +6,7 @@
 #    By: mmousli <mmousli@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/06 12:13:15 by mmousli           #+#    #+#              #
-#    Updated: 2025/11/09 18:10:00 by mmousli          ###   ########.fr        #
+#    Updated: 2025/11/11 15:32:52 by mmousli          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RM	= rm -rf
 
 SRC	= ft_strlen.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	  ft_memset.c ft_bzero.c ft_memcpy.c ft_memcmp.c ft_memmove.c ft_memchr.c ft_toupper.c \
-	  ft_tolower.c ft_strchr.c ft_strrchr.c
+	  ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_strlcpy.c ft_strlcat.c
 
 OBJ	= $(SRC:.c=.o)
 
