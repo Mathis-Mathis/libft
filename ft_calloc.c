@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmousli <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mmousli <mmousli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 18:09:04 by mmousli           #+#    #+#             */
-/*   Updated: 2025/11/12 13:08:38 by mmousli          ###   ########.fr       */
+/*   Created: 2025/11/12 11:24:08 by mmousli           #+#    #+#             */
+/*   Updated: 2025/11/12 12:53:50 by mmousli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_calloc(size_t count, size_t size)
 {
-	int		i;
-	char	*last;
+	void	*ptr;
+	size_t	total;
 
-	i = 0;
-	last = NULL;
-	while (s[i] != '\0')
+	if (count != 0 && size > SIZE_MAX / count)
 	{
-		if (s[i] == (char)c)
-		{
-			last = ((char *)&s[i]);
-		}
-	i++;
+		return (NULL);
 	}
-	if (s[i]  == (unsigned char) c)
-	{
-		last = ((char *)&s[i]);
-	}
-	return (last);
+	total = count * size;
+	ptr = malloc(total);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, total);
+	return (ptr);
 }
