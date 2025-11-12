@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmousli <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mmousli <mmousli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 18:09:04 by mmousli           #+#    #+#             */
-/*   Updated: 2025/11/12 13:25:43 by mmousli          ###   ########.fr       */
+/*   Created: 2025/11/12 13:09:15 by mmousli           #+#    #+#             */
+/*   Updated: 2025/11/12 13:26:04 by mmousli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strdup(const char *s)
 {
+	int		len;
 	int		i;
-	char	*last;
+	char	*dup;
 
+	len = ft_strlen(s);
+	dup = (char *)malloc(len + 1);
 	i = 0;
-	last = NULL;
-	while (s[i] != '\0')
+	if (!dup)
+		return (NULL);
+	while (i < len)
 	{
-		if (s[i] == (char)c)
-		{
-			last = ((char *)&s[i]);
-		}
+		dup[i] = s[i];
 		i++;
 	}
-	if (s[i] == (unsigned char) c)
-	{
-		last = ((char *)&s[i]);
-	}
-	return (last);
+	dup[i] = '\0';
+	return (dup);
 }
