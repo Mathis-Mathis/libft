@@ -6,7 +6,7 @@
 /*   By: mmousli <mmousli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:22:16 by mmousli           #+#    #+#             */
-/*   Updated: 2025/11/14 16:27:11 by mmousli          ###   ########.fr       */
+/*   Updated: 2025/11/14 16:37:20 by mmousli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*trim;
 
 	start = 0;
-	while (s1[start] != '\n' && ft_char_in_set(s1[start], set))
+	while (s1[start] != '\0' && ft_char_in_set(s1[start], set))
 		start++;
 	end = ft_strlen(s1);
 	while (end > start && ft_char_in_set(s1[end - 1], set))
