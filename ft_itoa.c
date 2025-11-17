@@ -6,13 +6,13 @@
 /*   By: mmousli <mmousli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 16:21:38 by mmousli           #+#    #+#             */
-/*   Updated: 2025/11/14 15:13:46 by mmousli          ###   ########.fr       */
+/*   Updated: 2025/11/15 14:17:13 by mmousli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_get_len(long nb)
+static int	ft_get_len(long nb)
 {
 	int	len;
 
@@ -28,7 +28,7 @@ int	ft_get_len(long nb)
 	return (len);
 }
 
-char	*ft_create_malloc(int len)
+static char	*ft_create_malloc(int len)
 {
 	char	*str;
 

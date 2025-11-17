@@ -6,7 +6,7 @@
 /*   By: mmousli <mmousli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 12:20:33 by mmousli           #+#    #+#             */
-/*   Updated: 2025/11/13 16:18:37 by mmousli          ###   ########.fr       */
+/*   Updated: 2025/11/15 14:23:28 by mmousli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	ft_count_words(char const *s, char c)
 	return (count);
 }
 
-char	*ft_copy_words(char const *s, char c)
+static char	*ft_copy_words(char const *s, char c)
 {
 	int		i;
 	char	*word;
@@ -53,7 +53,7 @@ char	*ft_copy_words(char const *s, char c)
 	return (word);
 }
 
-char	**ft_free_malloc( char **tab)
+static char	**ft_free_malloc( char **tab)
 {
 	int	i;
 
@@ -67,7 +67,7 @@ char	**ft_free_malloc( char **tab)
 	return (NULL);
 }
 
-char	**ft_tousofsplit(char const *s, char c)
+static char	**ft_tousofsplit(char const *s, char c)
 {
 	char	**tab;
 	int		i;
