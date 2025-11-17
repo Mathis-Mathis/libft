@@ -1,49 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmousli <mmousli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/15 15:49:46 by mmousli           #+#    #+#             */
-/*   Updated: 2025/11/17 15:28:59 by mmousli          ###   ########.fr       */
+/*   Created: 2025/11/17 15:05:56 by mmousli           #+#    #+#             */
+/*   Updated: 2025/11/17 15:31:13 by mmousli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	char			*res;
 	unsigned int	i;
 
 	i = 0;
 	if (!s || !f)
-		return (NULL);
-	res = malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (!res)
-		return (NULL);
+		return ;
 	while (s[i] != '\0')
 	{
-		res[i] = f(i, s[i]);
+		f(i, &s[i]);
 		i++;
 	}
-	res[i] = '\0';
-	return (res);
 }
 
-/*char	ft_upper_even(unsigned int i, char c)
+/*void	ft_upper(unsigned int i, char *c)
 {
-	if (i % 2 == 0 && c>= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	(void)i;
+	if (*c >= 'a' && *c <= 'z')
+		*c = *c - 32;
 }
-
 
 #include <stdio.h>
 int	main(void)
 {
-	char const *s = "Salut je suis une string";
-	char *res = ft_strmapi(s, ft_upper_even);
-	printf("%s\n", res);
+	char s[] = "Salut je suis une string";
+
+	printf("%s\n", s);
+	ft_striteri(s, ft_upper);
+	printf("%s\n", s);
 }*/
