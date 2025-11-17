@@ -6,7 +6,7 @@
 /*   By: mmousli <mmousli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 12:20:33 by mmousli           #+#    #+#             */
-/*   Updated: 2025/11/15 14:23:28 by mmousli          ###   ########.fr       */
+/*   Updated: 2025/11/17 13:34:57 by mmousli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,3 +102,27 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (ft_tousofsplit(s, c));
 }
+
+/*#include <stdio.h>
+int	main(void)
+{
+	char	**tab;
+	char	**tab2;
+	char	**tab3;
+	char	**tab4;
+	int		i;
+
+	tab = ft_split("Salut a tous je suis une string pour faire des test", ' ');
+	tab2 = ft_split("                  ", ' ');
+	tab3 = ft_split("aa---bbbbb-d----ssss---qq---", '-');
+	tab4 = ft_split("0000000000000000000000000000000000", ' ');
+	if(!tab2)
+		return (1);
+
+	i = 0;
+	while (tab2[i])
+	{
+		printf("[%s]", tab2[i]);
+		i++;
+	}
+}*/
