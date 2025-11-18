@@ -6,7 +6,7 @@
 /*   By: mmousli <mmousli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 13:20:05 by mmousli           #+#    #+#             */
-/*   Updated: 2025/11/18 13:28:47 by mmousli          ###   ########.fr       */
+/*   Updated: 2025/11/18 13:39:41 by mmousli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *new;
-	new = malloc(sizeof(t_list));
-	if(!new)
+	t_list	*new;
+
+	new = malloc (sizeof(t_list));
+	if (!new)
 		return (NULL);
 	new->content = content;
 	new->next = NULL;
