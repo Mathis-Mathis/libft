@@ -6,7 +6,7 @@
 /*   By: mmousli <mmousli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 15:19:39 by mmousli           #+#    #+#             */
-/*   Updated: 2025/11/19 15:48:54 by mmousli          ###   ########.fr       */
+/*   Updated: 2025/11/19 15:51:09 by mmousli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		return ;
 	}
 	last = *lst;
-	while(last->next != NULL)
+	while (last->next != NULL)
 	{
 		last = last->next;
 	}
