@@ -6,7 +6,7 @@
 /*   By: mmousli <mmousli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:22:16 by mmousli           #+#    #+#             */
-/*   Updated: 2025/11/15 14:23:37 by mmousli          ###   ########.fr       */
+/*   Updated: 2025/11/21 15:27:19 by mmousli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,30 @@ static int	ft_char_in_set(char c, char const *set)
 	return (0);
 }
 
+static char	*ft_cpytrim(char *trim, char const *s1, int start, int end)
+{
+	int	i;
+
+	i = 0;
+	while (start < end)
+	{
+		trim[i] = s1[start];
+		i++;
+		start++;
+	}
+	trim[i] = '\0';
+	return (trim);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		start;
 	int		end;
-	int		i;
 	int		len_malloc;
 	char	*trim;
 
+	if (!s1 || !set)
+		return (NULL);
 	start = 0;
 	while (s1[start] != '\0' && ft_char_in_set(s1[start], set))
 		start++;
@@ -44,14 +60,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trim = malloc(sizeof(char) * len_malloc + 1);
 	if (!trim)
 		return (NULL);
-	i = 0;
-	while (start < end)
-	{
-		trim[i] = s1[start];
-		i++;
-		start++;
-	}
-	trim[i] = '\0';
+	trim = ft_cpytrim(trim, s1, start, end);
 	return (trim);
 }
 
