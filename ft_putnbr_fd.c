@@ -6,7 +6,7 @@
 /*   By: mmousli <mmousli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 12:39:35 by mmousli           #+#    #+#             */
-/*   Updated: 2025/11/18 13:03:13 by mmousli          ###   ########.fr       */
+/*   Updated: 2025/11/21 15:13:43 by mmousli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	long	nb;
+	char	c;
 
 	nb = n;
 	if (nb < 0)
@@ -24,7 +25,8 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (nb >= 0 && nb <= 9)
 	{
-		write(fd, &(char){nb + '0'}, 1);
+		c = nb + '0';
+		write(fd, &c, 1);
 	}
 	else
 	{

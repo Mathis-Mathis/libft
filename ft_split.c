@@ -6,7 +6,7 @@
 /*   By: mmousli <mmousli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 12:20:33 by mmousli           #+#    #+#             */
-/*   Updated: 2025/11/17 13:34:57 by mmousli          ###   ########.fr       */
+/*   Updated: 2025/11/21 15:11:19 by mmousli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,12 @@ static char	*ft_copy_words(char const *s, char c)
 	return (word);
 }
 
-static char	**ft_free_malloc( char **tab)
+static char	**ft_free_malloc(char **tab, int j)
 {
 	int	i;
 
 	i = 0;
-	while (tab[i])
+	while (i < j)
 	{
 		free(tab[i]);
 		i++;
@@ -84,7 +84,7 @@ static char	**ft_tousofsplit(char const *s, char c)
 		{
 			tab[j] = ft_copy_words(&s[i], c);
 			if (!tab[j])
-				return (ft_free_malloc(tab));
+				return (ft_free_malloc(tab, j));
 			j++;
 			while (s[i] != '\0' && s[i] != c)
 				i++;
