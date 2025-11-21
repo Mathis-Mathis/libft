@@ -1,43 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmousli <mmousli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 14:56:58 by mmousli           #+#    #+#             */
-/*   Updated: 2025/11/19 15:20:46 by mmousli          ###   ########.fr       */
+/*   Created: 2025/11/18 13:20:05 by mmousli           #+#    #+#             */
+/*   Updated: 2025/11/21 14:14:27 by mmousli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+t_list	*ft_lstnew(void *content)
 {
-	if (!lst)
+	t_list	*new;
+
+	new = malloc (sizeof(t_list));
+	if (!new)
 		return (NULL);
-	while (lst->next != NULL)
-		lst = lst->next;
-	return (lst);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }
-
-/*#include <stdio.h>
-int	main(void)
-{
-	t_list a;
-	t_list b;
-	t_list c;
-
-	a.content = "A";
-	b.content = "b";
-	c.content = "c";
-
-	a.next = &b;
-	b.next = &c;
-	c.next = NULL;
-
-	t_list *lst = &a;
-
-	t_list *last_node = ft_lstlast(lst);
-	printf("%s", (char *)last_node->content);
-}*/

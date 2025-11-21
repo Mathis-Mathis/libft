@@ -1,42 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmousli <mmousli@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 13:47:57 by mmousli           #+#    #+#             */
-/*   Updated: 2025/11/19 14:49:50 by mmousli          ###   ########.fr       */
+/*   Created: 2025/11/19 14:56:58 by mmousli           #+#    #+#             */
+/*   Updated: 2025/11/21 14:14:46 by mmousli          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-	int	i;
-
-	i = 0;
-	while (lst != NULL)
-	{
-		i++;
+	if (!lst)
+		return (NULL);
+	while (lst->next != NULL)
 		lst = lst->next;
-	}
-	return (i);
+	return (lst);
 }
 
 /*#include <stdio.h>
 int	main(void)
 {
-	t_list *a = ft_lstnew("je suis A");
-	t_list *b = ft_lstnew("je suis B");
-	t_list *c = ft_lstnew("je suis C");
-	t_list *d = ft_lstnew("je suis D");
+	t_list a;
+	t_list b;
+	t_list c;
 
-	ft_lstadd_front(&a, b);
-	ft_lstadd_front(&a, c);
-	ft_lstadd_front(&a, d);
+	a.content = "A";
+	b.content = "b";
+	c.content = "c";
 
-	int	size = ft_lstsize(a);
-	printf("%d\n", size);
+	a.next = &b;
+	b.next = &c;
+	c.next = NULL;
+
+	t_list *lst = &a;
+
+	t_list *last_node = ft_lstlast(lst);
+	printf("%s", (char *)last_node->content);
 }*/
