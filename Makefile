@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mmousli <mmousli@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/11/21 14:48:31 by mmousli           #+#    #+#              #
-#    Updated: 2025/11/21 15:33:05 by mmousli          ###   ########.fr        #
+#    Created: 2025/11/24 16:37:30 by mmousli           #+#    #+#              #
+#    Updated: 2025/11/24 16:44:36 by mmousli          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,20 +32,23 @@ BONUS_SRC   = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 
 BONUS_OBJ   = $(BONUS_SRC:.c=.o)
 
-
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	@ar rcs $(NAME) $(OBJ)
+%.o : %.c 
+	$(CC) $(CFLAGS) -c $< -o $@
+	ar rcs ${NAME} $@
 
-bonus: $(OBJ) $(BONUS_OBJ)
-	@ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
+$(NAME): $(OBJ)
+#	ar rcs $(NAME) $(OBJ)
+
+bonus: $(NAME) $(BONUS_OBJ)
+#	ar rcs $(NAME) $(BONUS_OBJ)
 
 clean:
-	@$(RM) $(OBJ) $(BONUS_OBJ)
+	$(RM) $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
-	@$(RM) $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
