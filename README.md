@@ -1,4 +1,4 @@
-# Libft – FR / EN README
+# Libft – EN / FR README
 ## ■■ English Version
 Libft is my first project at 42.
 It is a custom C library that reimplements essential functions from the standard C library, along with
